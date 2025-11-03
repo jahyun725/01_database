@@ -58,3 +58,4 @@ SELECT CONCAT('황', ' ', '자현') AS 'full name'; -- 띄어쓰기도 문자열
 -- menudb 데이터베이스 내 모든 테이블 조회해보기
 SELECT * FROM tbl_category;
 SELECT category_code, category_name from tbl_category;
+
