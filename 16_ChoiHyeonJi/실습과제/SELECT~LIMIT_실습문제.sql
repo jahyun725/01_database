@@ -6,162 +6,166 @@ FROM
 
 -- 2. 사원들의 사번(사원번호), 이름 조회
 SELECT
-    EMP_ID,
-    EMP_NAME
+    emp_id,
+    emp_name
 FROM
     employee;
 
 -- 3. 201번 사번의 사번 및 이름 조회
 SELECT
-    EMP_ID,
-    EMP_NAME
+    emp_id,
+    emp_name
 FROM
     employee
 WHERE
-    EMP_ID = 201;
+    emp_id = 201;
 
 -- 4. 부서 코드가 'D9'인 사원의 이름과 부서코드 조회
 SELECT
-    EMP_NAME,
-    DEPT_CODE
+    emp_name,
+    dept_code
 FROM
     employee
 WHERE
-    DEPT_CODE = 'D9';
+    dept_code = 'D9';
 
 -- 5. 직급 코드가 'J1'인 사원 조회
 SELECT
-    EMP_NAME
+    emp_name,
+    job_code
 FROM
-    employee
+    EMPLOYEE
 WHERE
-    JOB_CODE = 'J1';
+    job_code = 'J1';
 
 -- 6. 급여가 300만원 이상(>=)인 사원의 사번, 이름, 급여를 조회
 SELECT
-    EMP_ID,
-    EMP_NAME,
-    SALARY
+    emp_id,
+    emp_name,
+    salary
 FROM
     employee
 WHERE
-    SALARY >= 3000000;
+    salary >= 3000000;
 
 -- 7. 부서코드가 'D6'이고 급여를 300만원보다 많이 받는 사원의 이름, 급여 조회
 SELECT
-    EMP_NAME,
-    SALARY
+    emp_name,
+    salary
 FROM
     employee
 WHERE
-    SALARY >= 3000000
-  AND
-    DEPT_CODE = 'D6';
+    dept_code = 'D6'
+AND
+    salary >= 3000000;
 
 -- 8. 보너스를 받지 않는 사원의 사번, 이름, 급여, 보너스 조회
 SELECT
-    EMP_ID,
-    EMP_NAME,
-    SALARY,
-    BONUS
+    emp_id,
+    emp_name,
+    salary,
+    bonus
 FROM
     employee
 WHERE
-    BONUS IS NOT NULL;
+    bonus IS NULL;
+
 
 -- 9. 'D9' 부서에서 근무하지 않는 사원의 사번, 이름 조회
 SELECT
-    EMP_ID,
-    EMP_NAME
+    emp_id,
+    emp_name
 FROM
     employee
 WHERE
-    DEPT_CODE != 'D9';
+    dept_code != 'D9';
 
 -- 10. 퇴사 여부가 N인 직원의 사번, 이름, 입사일 조회 (별칭 사용)
 SELECT
-    EMP_ID AS '사번',
-    EMP_NAME AS '이름',
-    HIRE_DATE AS '입사일'
+    emp_id AS 사번,
+    emp_name AS 이름,
+    HIRE_DATE AS 입사일
 FROM
     employee
 WHERE
-    ENT_YN = 'N';
+    ent_yn = 'N';
+
 
 -- 11. 급여가 350만원 이상 550만원 이하를 받는 직원의 사번, 이름, 급여 조회
 SELECT
-    EMP_ID,
-    EMP_NAME,
-    SALARY
+    emp_id,
+    emp_name,
+    salary
 FROM
     employee
 WHERE
-    SALARY >= 3500000
-  AND
-    SALARY <= 5500000; -- between 350000 and 550000
+    salary BETWEEN 3500000 AND 5500000;
+
 
 -- 12. '성이 김씨'인 직원의 사번, 이름, 입사일 조회
 SELECT
-    EMP_ID,
-    EMP_NAME,
-    HIRE_DATE
+    emp_id,
+    emp_name,
+    hire_date
 FROM
     employee
 WHERE
-    EMP_NAME LIKE '김%';
+    emp_name LIKE '김%';
 
 -- 13. '성이 김씨'가 아닌 직원의 사번, 이름, 입사일 조회
 SELECT
-    EMP_ID,
-    EMP_NAME,
-    HIRE_DATE
+    emp_id,
+    emp_name,
+    hire_date
 FROM
     employee
 WHERE
-    EMP_NAME NOT LIKE '김%';
+    emp_name NOT LIKE '김%';
+
 
 -- 14. 이름에 '하' 문자가 포함된 직원의 이름, 주민번호, 부서코드 조회
 SELECT
-    EMP_NAME,
-    EMP_NO,
-    DEPT_CODE
+    emp_name,
+    emp_no,
+    dept_code
 FROM
     employee
 WHERE
-    EMP_NAME LIKE '%하%';
+    emp_name LIKE '%하%';
 
 -- 15. 'J2'직급이거나 'J7'직급인 직원들 중 급여가 200만원 이상인 직원의 이름, 급여 조회
 SELECT
-    EMP_NAME,
-    SALARY
+    emp_name,
+    salary
 FROM
     employee
 WHERE
-    (JOB_CODE = 'J2' OR JOB_CODE = 'J7')
-  AND
-    SALARY >= 2000000;
+    job_code IN('J2', 'J7')
+AND
+    salary >= 2000000;
 
 -- 16. 급여가 높은 순서대로 사원의 이름, 급여 조회 (상위 5명만)
 SELECT
-    EMP_NAME,
-    SALARY
+    emp_name,
+    salary
 FROM
     employee
 ORDER BY
-    SALARY DESC
-LIMIT 0,5;
+    salary desc
+LIMIT 5;
 
 -- 17. 중복된 급여 범위를 제거하고 급여 조회
-SELECT
-    DISTINCT SALARY
+SELECT DISTINCT
+    salary
 FROM
     employee;
 
 -- 18. 사원들의 이름을 사전 순서대로 정렬하고 상위 10명 조회
 SELECT
-    EMP_NAME
+    emp_name
 FROM
     employee
 ORDER BY
-    EMP_NAME ASC
-LIMIT 0,10;
+    emp_name ASC
+LIMIT 10;
+

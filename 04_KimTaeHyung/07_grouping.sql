@@ -5,8 +5,7 @@
 */
 
 /* 그룹 함수
-   - 전체 테이블 또는
-     GROUP이 지어진 결과 집합에 사용 가능한 함수
+   - 전체 테이블 또는 GROUP이 지어진 결과 집합에 사용 가능한 함수
    - COUNT(), SUM(), MIN(), MAX(), AVG()
 */
 SELECT
@@ -26,11 +25,10 @@ FROM
 
 
 -- COUNT 함수 특징
-SELECT * FROM tbl_category;
 
 SELECT
-    COUNT(*),             -- * : 모든 행(NULL 포함)
-    COUNT(category_code),  -- 컬럼명 기재 : 지정된 컬럼에 값의 개수(NULL 제외)
+    COUNT(*),            -- * : 모든 행(NULL 포함)
+    COUNT(category_code), -- 컬럼명 기재 : 지정된 컬럼에 값의 개수(NULL 제외)
     COUNT(ref_category_code) -- NULL 카운트 X
 FROM
     tbl_category;
@@ -49,18 +47,17 @@ FROM
 GROUP BY
     category_code;
 
-
 -- practice 계정 --
 -- 대소 비교는 숫자, 문자, 날짜 가능
--- 문자 : (소)A   ~   Z(대)
---       (소)ㄱ   ~   힣(대)
--- 날짜 : (소)과거  ~  미래(대)
+-- 문자:  (소)A  ~  Z(대)
+-- 한글:  (소)ㄱ  ~  힣(대)
+-- 날짜:  (소)과거  ~  미래(대)
 
 SELECT
-    MIN(emp_name),
-    MAX(emp_name),
-    MIN(hire_date) AS '가장빠른입사일',
-    MAX(hire_date) AS '가장최근입사일'
+    MIN(EMP_NAME),
+    MAX(EMP_NAME),
+    MIN(HIRE_DATE) AS '가장빠른입사일',
+    MAX(HIRE_DATE) AS '가장최근입사일'
 FROM
     employee;
 
@@ -75,24 +72,22 @@ FROM
 SELECT
     category_code,
     menu_price,
-    -- menu_name,
     COUNT(*) -- GROUP BY 가장 끝에 작성된 그룹을 기준으로 함수 수행
 FROM
     tbl_menu
 GROUP BY
     category_code, menu_price;
---  오른쪽에 작성될 수록 왼쪽 그룹에 포함된 소규모 그룹
+-- 오른쪽에 작성될 수록 왼쪽 그룹에 포함된 소규모 그룹
 
 /* tip.
     GROUP BY 절에 언급되지 않은 컬럼명을
     SELECT 절에 일반 작성하면 정확한 값이 출력되지 않는다!!
 */
 
-
 /*
     2. HAVING
-    - GROUP BY로 만들어진 그룹에 대한 조건을 작성하는 절
-    - HAVING절에는 그룹 함수가 반드시 포함된다
+     - GROUP BY로 만들어진 그룹에 대한 조건을 작성하는 절
+     - HAVING절에는 그룹 함수가 반드시 포함된다
 */
 
 SELECT
@@ -107,7 +102,7 @@ HAVING
 
 
 /*
-    WHERE  : 행 필터링
+    WHERE : 행 필터링
     HAVING : 그룹 필터링
 */
 
@@ -134,7 +129,6 @@ SELECT
  WITH ROLLUP;
 
 
-
 SELECT
        menu_price
      , category_code
@@ -142,11 +136,9 @@ SELECT
 FROM tbl_menu
 GROUP BY menu_price, category_code
 WITH ROLLUP;
--- ORDER BY menu_price, category_code
+-- ORDER BY menu_price, category_code ASC;
 
 
-
-# 종합 문제 - SQL 해석하기
 SELECT
     a.category_code AS '코드',
     b.category_name '카테고리명',
@@ -162,8 +154,5 @@ GROUP BY
 HAVING
     AVG(a.menu_price) >= 8000
 ORDER BY
-    `평균금액` ASC
+    평균금액 ASC
 LIMIT 0,3;
-
-
-
