@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2db303e-ec83-45fc-bdb0-89502c29420c" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1252551a-05a3-4580-887b-5b884f887afd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1252551a-05a3-4580-887b-5b884f887afd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/20cb81fa-b1f3-48fd-96ce-df082a8dac57.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/20cb81fa-b1f3-48fd-96ce-df082a8dac57.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13_ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/13_ddl.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
