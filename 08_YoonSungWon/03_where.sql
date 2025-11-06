@@ -250,7 +250,7 @@ SELECT
 FROM
     tbl_menu
 WHERE
-#     menu_price  >= 10000 AND menu_price <= 25000
+# menu_price  >= 10000 AND menu_price <= 25000
     menu_price BETWEEN  10000 AND 25000
 ORDER BY
     menu_price ASC;

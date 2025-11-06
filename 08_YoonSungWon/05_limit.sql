@@ -1,11 +1,11 @@
 /* SELECT 해석 순서
-   5: SELECT
-   1 : FROM
-   2: WHERE
-   3: GROUP BY
-   4: HAVING
-   6: ORDER BY
-   7: LIMIT
+    SELECT      -> 5. 컬럼 필터링
+    FROM        -> 1. 테이블 선택( +JOIN)
+    WHERE       -> 2. 행 필터링
+    GROUP BY    -> 3. 그룹화
+    HAVING      -> 4. 그룹화 필터링
+    ORDER BY    -> 6. 정렬 순서
+    LIMIT       -> 7. 조회 행수 제한
 */
 
 

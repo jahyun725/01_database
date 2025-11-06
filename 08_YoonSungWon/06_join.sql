@@ -90,7 +90,8 @@ LEFT JOIN
     - JOIN 구문 기준으로 오른쪽에 테이블의
         모든 레코드 (행)이 결과에 포함되도록 하는 JOIN
     - JOIN의 기준이 된 컬럼 값이 일치하지 않아도 결과에 포함
-*/SELECT
+*/
+SELECT
     *
 FROM
     employee e

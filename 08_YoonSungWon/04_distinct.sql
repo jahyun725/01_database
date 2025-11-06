@@ -3,6 +3,10 @@
    - 테이블 내에 명단, 중복되지 않는 데이터의 개수 등에 사용
 */
 
+SELECT
+    category_code
+FROM tbl_menu;
+
 # 메뉴 테이블에 존재하는 모든 카테고리 코드의 종류를 조회
 SELECT
     DISTINCT category_code

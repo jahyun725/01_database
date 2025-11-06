@@ -88,6 +88,17 @@ GROUP BY
 -- 오른쪽으로 작성될 수록 왼쪽 그룹에 포함된 소규모 그룹
 
 
+
+SELECT
+    category_code,
+    menu_price,
+    COUNT(*)    -- GROUP BY 가장 마지막에 작성 된 그룹 기준으로 함수 실행
+FROM
+    tbl_menu
+GROUP BY
+    category_code,menu_price;
+
+
 /* tip.
    GROUP BY 절에 언급되지 않은 컬럼명을
    SELECT 절에 일반 작성하면 정확한 값이 출력되지 않는다.
