@@ -20,7 +20,7 @@ SELECT * FROM phone;
 EXPLAIN SELECT * FROM phone;
 
 -- 인덱스 생성 (phone_name 컬럼)
-CREATE INDEX idx_name
+CREATE INDEX IF NOT EXISTS  idx_name
 ON phone(phone_name); -- phone_name에 대한 인덱스 생성
 
 -- 인덱스를 사용해서 조회
